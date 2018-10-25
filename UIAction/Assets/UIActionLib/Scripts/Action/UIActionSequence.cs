@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 public class UIActionSequence : UIActionBaseInfo
 {
@@ -181,8 +182,6 @@ public class UIActionSequence : UIActionBaseInfo
 
         yield return waitDelay;
 
-        bStart = true;
-
         for (int i = 0; i < liActs.Count; ++i)
         {
             var obj = liActs[i];
@@ -207,10 +206,130 @@ public class UIActionSequence : UIActionBaseInfo
     }
     protected override IEnumerator Action_Looping(float _during)
     {
-        yield break;
+        if (liActs.Count <= 0)
+        {
+            procAct = null;
+            yield break;
+        }
+
+        yield return waitDelay;
+
+        bStart = true;
+
+        int loop = nMaxLoop == -1 ? -2 : 0;
+
+        while (loop < nMaxLoop)
+        {
+            bDone = false;
+
+            for (int i = 0; i < liActs.Count; ++i)
+            {
+                var obj = liActs[i];
+
+                if (obj == null)
+                    yield return null;
+
+                var acts = obj.GetComponents<UIActionBaseInfo>();
+
+                for (int j = 0; j < acts.Length; ++j)
+                {
+                    var act = acts[j];
+
+                    if (act.LoopType == UIActionLoopType.UIActionLoop_Once)
+                    {
+                        yield return new WaitForSeconds(act.Delay);
+
+                        act.Play();
+                    }
+                }
+            }
+
+            bDone = true;
+
+            if (nMaxLoop != -1)
+                ++loop;
+        }
+
+        procAct = null;
     }
     protected override IEnumerator Action_Pingpong(float _during)
     {
-        yield break;
+        if (liActs.Count <= 0)
+        {
+            procAct = null;
+            yield break;
+        }
+
+        yield return waitDelay;
+
+        bStart = true;
+
+        int loop = nMaxLoop == -1 ? -2 : 0;
+
+        while (loop < nMaxLoop)
+        {
+            bDone = false;
+
+            float long_during = liActs.Max((obj) =>
+            {
+                return obj.GetComponents<UIActionBaseInfo>().Max((act) =>
+                {
+                    return act.During;
+                });
+            });
+
+            for (int i = 0; i < liActs.Count; ++i)
+            {
+                var obj = liActs[i];
+
+                if (obj == null)
+                    yield return null;
+
+                var acts = obj.GetComponents<UIActionBaseInfo>();
+
+                for (int j = 0; j < acts.Length; ++j)
+                {
+                    var act = acts[j];
+
+                    if (act.LoopType == UIActionLoopType.UIActionLoop_Once)
+                    {
+                        yield return new WaitForSeconds(act.Delay);
+
+                        act.Play();
+                    }
+                }
+            }
+
+            yield return new WaitForSeconds(long_during);
+
+            for (int i = liActs.Count-1; i >= 0; --i)
+            {
+                var obj = liActs[i];
+
+                if (obj == null)
+                    yield return null;
+
+                var acts = obj.GetComponents<UIActionBaseInfo>();
+
+                for (int j = 0; j < acts.Length; ++j)
+                {
+                    var act = acts[j];
+
+                    if (act.LoopType == UIActionLoopType.UIActionLoop_Once)
+                    {
+                        yield return new WaitForSeconds(act.Delay);
+
+                        act.Play();
+                    }
+                }
+            }
+
+            bDone = true;
+
+            if (nMaxLoop != -1)
+                ++loop;
+        }
+
+        procAct = null;
     }
 }
