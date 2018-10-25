@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIAction", "UIAction.csproj", "{141959C1-E261-10BB-0DCC-EA4F26D4621D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIAction.Editor", "UIAction.Editor.csproj", "{898C3AA7-7E62-BC52-BCB6-587DE4B1D874}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{141959C1-E261-10BB-0DCC-EA4F26D4621D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{141959C1-E261-10BB-0DCC-EA4F26D4621D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{141959C1-E261-10BB-0DCC-EA4F26D4621D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{141959C1-E261-10BB-0DCC-EA4F26D4621D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{898C3AA7-7E62-BC52-BCB6-587DE4B1D874}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{898C3AA7-7E62-BC52-BCB6-587DE4B1D874}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{898C3AA7-7E62-BC52-BCB6-587DE4B1D874}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{898C3AA7-7E62-BC52-BCB6-587DE4B1D874}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
