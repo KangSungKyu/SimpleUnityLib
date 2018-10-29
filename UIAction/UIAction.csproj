@@ -89,6 +89,7 @@
   <ItemGroup>
     <Compile Include="Assets\UIActionLib\Scripts\Action\UIActionBaseInfo.cs" />
     <Compile Include="Assets\UIActionLib\Scripts\Action\UIActionSequence.cs" />
+    <Compile Include="Assets\UIActionLib\Scripts\Action\UITypewritterAction.cs" />
     <Compile Include="Assets\UIActionLib\Scripts\Action\UITextAction.cs" />
     <Compile Include="Assets\UIActionLib\Scripts\Action\UIColorAction.cs" />
     <Compile Include="Assets\UIActionLib\Scripts\Action\UITextActionBase.cs" />
@@ -108,6 +109,7 @@
     <Compile Include="Assets\UIActionLib\Scripts\Ease\EaseQuart.cs" />
     <Compile Include="Assets\UIActionLib\Scripts\Ease\EaseQuint.cs" />
     <Compile Include="Assets\UIActionLib\Scripts\Ease\EaseSine.cs" />
+    <Compile Include="Assets\UIActionLib\Scripts\KorWord\KorWordMaker.cs" />
     <Compile Include="Assets\UIActionLib\Scripts\Popup\BasePopup.cs" />
     <Compile Include="Assets\UIActionLib\Scripts\TestPopup.cs" />
     <Compile Include="Assets\UIActionLib\UnitTest\TEST_UIAction.cs" />
