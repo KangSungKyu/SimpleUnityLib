@@ -46,9 +46,7 @@ public class UITextAction : UITextActionBase
     protected override IEnumerator Action_Once(float _during)
     {
         actBefore.Invoke();
-
-        float timer = 0.0f;
-
+        
         string start = Start;
         string end = End;
 

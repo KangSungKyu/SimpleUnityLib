@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 392}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -417,9 +417,9 @@ MonoBehaviour:
     height: 439
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: a6e0ffffc2e0ffff3ae4ffff62e6ffff7ee6ffff60eaffff32eeffff4eeeffff34f2ffffe0f4fffffcf4ffffdcf8ffffdefbffff00000000
+    m_SelectedIDs: 9c5cffff
+    m_LastClickedID: -41828
+    m_ExpandedIDs: 925cffffb05effff4e5fffffaa62ffff3465ffffee67ffffe269ffffac6bffffb26dffff4270ffffb673ffff4476ffff7679fffff67cffffde7ffffff682ffffb686ffffe489ffffee8cffffb88effffd891ffff5693fffffc95ffff8499ffff7c9dffffd0a0ffffd6a4ffffbaa7ffff28acffffceb0ffffb4b3ffff38b7ffff42b9ffff98bcfffffebffffffac2ffff68c4ffff42c8ffffa6ccffff02d1ffff6cd2ffff62d7ffff32dbfffffeddffff76dffffff6e0ffff06e4fffff0e5ffffe2e8ffffdefbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -626,19 +626,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/UIActionLib
+    - Assets/Editor
   m_ViewMode: 1
   m_StartGridSize: 39
   m_LastFolders:
-  - Assets/UIActionLib
+  - Assets/Editor
   m_LastFoldersGridSize: 39
   m_LastProjectPath: C:\Users\user\Documents\GitHub\SimpleUnityLib\UIAction
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 59}
-    m_SelectedIDs: 1e250000
-    m_LastClickedID: 9502
-    m_ExpandedIDs: 00000000de240000142500001e2500002e2500005c250000c625000000ca9a3bffffff7f
+    m_SelectedIDs: ea250000
+    m_LastClickedID: 9706
+    m_ExpandedIDs: 00000000e224000018250000222500003225000060250000cc25000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -666,7 +666,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000de240000142500001e2500002e2500005c250000c6250000
+    m_ExpandedIDs: 00000000e224000018250000222500003225000060250000cc250000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -691,9 +691,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: f0250000
+    m_LastClickedInstanceID: 9712
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000a411feff20bc0000d6e7f9ffe4eb0400e22c00002c2b0000e8260000c2fd0000182d0000e0300000ca2f0000c49affff94bcc8ff8817c1ff841f0700a03dc6fff291f6ff66eef9ffa05ceaff1ce0f8ffc28cf6ff86fdfaff9a85dfff76e2deff9814ceff46b2c5ff96d0c1ffae1afaff04b3eeffcc2a0000da440000408fd3fffc97c3ffaa88befff6b7bcffb490aaff7eb4a6ff6c7281ffb84c000096b3f6fffc87feffce18f3ff7633e9ff1a1beaff6272fdfff6ecfcffe205f8ff3c97f0ff72e5ebff0265e7ffbafddcffc80ed9ffa0a6d7ffd80ed1ff9a5a0000225a00002e79fdfff602fcff0ca5f6ff243d0000da3600009a45000026c3fdff9a4e0000382f0000a474000000000000722a0100acb50400943a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -710,7 +710,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 11}
+      m_ClientGUIView: {fileID: 0}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -801,7 +801,7 @@ MonoBehaviour:
     y: 92
     width: 275
     height: 710
-  m_ScrollPosition: {x: 0, y: 0}
+  m_ScrollPosition: {x: 0, y: 492.95508}
   m_InspectorMode: 0
   m_PreviewResizer:
     m_CachedPref: 189
