@@ -13,7 +13,9 @@ public class TEST_UIAction {
     private UIScaleAction actScale = null;
     private UIRotateAction actRotation = null;
     private UIColorAction actColor = null;
+    private UITextAction actText = null;
     private Image imgActor = null;
+    private Text txtActor = null;
     
 	public void UIAction_Create() {
         // Use the Assert class to test conditions.
@@ -24,7 +26,6 @@ public class TEST_UIAction {
         {
             Actor = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Actor"));
             rtActor = Actor.AddComponent<RectTransform>();
-            imgActor = Actor.AddComponent<Image>();
 
             rtActor.SetParent(Canvas.transform);
 
@@ -32,6 +33,7 @@ public class TEST_UIAction {
             actScale = Actor.AddComponent<UIScaleAction>();
             actRotation = Actor.AddComponent<UIRotateAction>();
             actColor = Actor.AddComponent<UIColorAction>();
+            actText = Actor.AddComponent<UITextAction>();
         }
 	}
 
@@ -124,6 +126,14 @@ public class TEST_UIAction {
         // yield to skip a frame
         UIAction_Create();
 
+        if (txtActor != null)
+            Component.Destroy(txtActor);
+
+        yield return null;
+
+        if (imgActor == null)
+            imgActor = Actor.AddComponent<Image>();
+
         yield return null;
 
         actColor.Start = new Color(1.0f, 0.0f, 0.0f, 1.0f);
@@ -143,5 +153,37 @@ public class TEST_UIAction {
         actColor.SetCurrentTimePosition(actColor.During);
         yield return null;
         Assert.AreEqual(new Color(1.0f, 1.0f, 1.0f, 1.0f), imgActor.color);
+    }
+    [UnityTest]
+    public IEnumerator TEST_UIAction_Text_Once_Lerp()
+    {
+        // Use the Assert class to test conditions.
+        // yield to skip a frame
+        UIAction_Create();
+
+        if (imgActor != null)
+            Component.Destroy(imgActor);
+
+        yield return null;
+
+        if (txtActor == null)
+            txtActor = Actor.AddComponent<Text>();
+
+        yield return null;
+
+        actText.Start = "test";
+        actText.End = "change text!";
+        actText.LoopType = UIActionBaseInfo.UIActionLoopType.UIActionLoop_Once;
+        actText.EaseType = UIActionBaseInfo.UIActionEaseType.UIActionEase_Lerp;
+        actText.Delay = 0.0f;
+        actText.During = 1.0f;
+
+        actText.IsStart = true;
+        actText.SetCurrentTimePosition(0.0f);
+        yield return null;
+        Assert.AreEqual("test", txtActor.text);
+        actText.SetCurrentTimePosition(actText.During);
+        yield return null;
+        Assert.AreEqual("change text!", txtActor.text);
     }
 }
