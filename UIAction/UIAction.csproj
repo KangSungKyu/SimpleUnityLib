@@ -89,6 +89,8 @@
   <ItemGroup>
     <Compile Include="Assets\UIActionLib\Scripts\Action\UIActionBaseInfo.cs" />
     <Compile Include="Assets\UIActionLib\Scripts\Action\UIActionSequence.cs" />
+    <Compile Include="Assets\UIActionLib\Scripts\Action\UITextColorAction.cs" />
+    <Compile Include="Assets\UIActionLib\Scripts\Action\UITextColorActionBase.cs" />
     <Compile Include="Assets\UIActionLib\Scripts\Action\UITypewritterAction.cs" />
     <Compile Include="Assets\UIActionLib\Scripts\Action\UITextAction.cs" />
     <Compile Include="Assets\UIActionLib\Scripts\Action\UIColorAction.cs" />
