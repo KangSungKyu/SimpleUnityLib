@@ -1,29 +1,30 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
+
 
 public class EventableType<TValueType> //call OnChanged when variable's value changed
 {
     public event System.Action<TValueType> OnChangedBefore = null;
     public event System.Action<TValueType> OnChangedAfter = null;
 
-    public EventableType() => value = default;
-    public EventableType(TValueType v) => value = v;
+    public EventableType() => originValue = default;
+    public EventableType(TValueType v) => originValue = v;
     //eventable<T> e = t;
     public static implicit operator EventableType<TValueType>(TValueType v) { return new EventableType<TValueType>(v); }
     //T t = e;
-    public static implicit operator TValueType(EventableType<TValueType> e) { return e.value; }
+    public static implicit operator TValueType(EventableType<TValueType> e) { return e.originValue; }
 
-    public override string ToString() { return value.ToString(); }
+    public override string ToString() { return originValue.ToString(); }
 
-    private TValueType value
+    private TValueType originValue
     {
-        get { return this.value; }
+        get { return originValue; }
         set
         {
-            oldValue = this.value;
+            oldValue = originValue;
             OnChangedBefore?.Invoke(oldValue);
-            this.value = value;
-            OnChangedAfter?.Invoke(this.value);
+            originValue = value;
+            OnChangedAfter?.Invoke(originValue);
         }
     }
     private TValueType oldValue = default;
